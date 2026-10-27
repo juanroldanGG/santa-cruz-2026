@@ -79,6 +79,23 @@
   .note ul{margin:.3rem 0 0;padding-left:1.1rem}
   .todo{color:var(--ink-3);font-style:italic}
   footer{margin-top:3rem;color:var(--ink-3);font-size:.85rem}
+  .jump{position:sticky;top:0;z-index:20;display:flex;gap:.4rem;overflow-x:auto;scrollbar-width:none;
+    margin:0 -16px;padding:.6rem 16px;background:var(--ground);border-bottom:1px solid var(--line)}
+  .jump::-webkit-scrollbar{display:none}
+  .jump a{flex:none;padding:.3rem .8rem;border:1px solid var(--line);border-radius:999px;background:var(--surface);
+    color:var(--ink-2);font-size:.85rem;font-weight:500;text-decoration:none;white-space:nowrap}
+  .jump a:hover{border-color:var(--blue);color:var(--blue)}
+  section{scroll-margin-top:3.5rem}
+  .am{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+  .am li{display:grid;grid-template-columns:5.2rem minmax(0,1fr);gap:.6rem;padding:.65rem 0;border-bottom:1px solid var(--line)}
+  .am-date{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--ink-3);padding-top:.15rem}
+  .am-body{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .6rem;font-size:.92rem}
+  .am-kind{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+  .am-addr{flex-basis:100%;color:var(--blue);text-decoration:none}
+  .am-code{display:inline-flex;gap:.35rem;align-items:baseline;padding:.12rem .5rem;border-radius:4px;background:var(--ochre-wash);color:var(--ochre)}
+  .am-code b{font-family:"IBM Plex Mono",monospace;font-size:.95rem;user-select:all}
+  .am-code small{font-size:.72rem}
+  .am-tel{color:var(--sc-ink);text-decoration:none;font-weight:500}
 </style>
 </head>
 <body>
@@ -96,6 +113,25 @@
   </dl>
 </header>
 
+<nav class="jump" aria-label="Ir a">
+  <a href="#amano">A mano</a>
+  <a href="#dias">Días</a>
+  <a href="#hoteles">Hoteles</a>
+  <a href="#vuelos">Vuelos</a>
+</nav>
+
+<section id="amano">
+<h2>A mano: direcciones y códigos</h2>
+<ul class="am">
+  <li><span class="am-date">31 oct</span><div class="am-body"><span class="am-kind">Vuelo</span> <strong>Avianca · ida · llegar con tiempo, check-in cierra 60 min antes</strong><span class="am-code"><small>Reserva</small> <b>pendiente</b></span></div></li>
+  <li><span class="am-date">31 oct–2 nov</span><div class="am-body"><span class="am-kind">Hotel</span> <strong>Hotel Paradox · entrada desde 4:00 p. m. · salida 12:00 p. m.</strong><a class="am-addr" href="https://www.google.com/maps/search/?api=1&query=Hotel+Paradox+611+Ocean+St+Santa+Cruz+CA" target="_blank" rel="noopener">📍 611 Ocean St, Santa Cruz, CA 95060</a><span class="am-code"><small>Hoteles.com</small> <b>72080608815500</b></span><a class="am-tel" href="tel:+18314257100">☎ +1 (831) 425-7100</a></div></li>
+  <li><span class="am-date">2–5 nov</span><div class="am-body"><span class="am-kind">Hotel</span> <strong>Falta reservar</strong></div></li>
+  <li><span class="am-date">6 nov</span><div class="am-body"><span class="am-kind">Vuelo</span> <strong>Avianca · regreso</strong><span class="am-code"><small>Reserva</small> <b>pendiente</b></span></div></li>
+  <li><span class="am-date">Siempre</span><div class="am-body"><span class="am-kind">Emergencias</span> <strong>Estados Unidos</strong><a class="am-tel" href="tel:911">☎ 911</a></div></li>
+</ul>
+</section>
+
+<section id="dias">
 <h2>Día a día</h2>
 <ol class="days">
   <li><div class="date">sáb<b>31</b>oct</div><div>
@@ -120,7 +156,9 @@
     <span class="chip air">Vuelo</span>
     <p>Vuelo de regreso <span class="todo">(falta la confirmación)</span>.</p></div></li>
 </ol>
+</section>
 
+<section id="hoteles">
 <h2>Hoteles</h2>
 <div class="card">
   <span class="chip sc">Santa Cruz</span>
@@ -144,7 +182,9 @@
     </ul>
   </div>
 </div>
+</section>
 
+<section id="vuelos">
 <h2>Vuelos</h2>
 <div class="card">
   <span class="chip air">Avianca</span>
@@ -157,8 +197,9 @@
     </ul>
   </div>
 </div>
+</section>
 
-<footer>Actualizado el 26 oct 2026.</footer>
+<footer>Actualizado el 27 oct 2026.</footer>
 </div>
 </body>
 </html>
